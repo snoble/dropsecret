@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mx:Application xmlns:mx="http://www.adobe.com/2006/mxml" layout="absolute" height="1" width="1">
+	
+	<mx:Script>
+		<![CDATA[
+			import flash.external.ExternalInterface;
+			import flash.events.Event;
+			import dse.KeyGenerator;
+
+			ExternalInterface.addCallback("generateKeys", KeyGenerator.generateKeys);
+			ExternalInterface.call("flashdone");
+
+		]]>
+	</mx:Script>
+</mx:Application>

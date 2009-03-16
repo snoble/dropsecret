@@ -1,0 +1,61 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>foo</title>
+<script src="jquery-1.2.6.min.js" type="text/javascript"></script>
+<script src="sha256.js" type="text/javascript"></script>
+<script src="aes.js" type="text/javascript"></script>
+<script src="jsbn.js" type="text/javascript"></script>
+<script src="prng4.js" type="text/javascript"></script>
+<script src="rng.js" type="text/javascript"></script>
+<script src="jsbn2.js" type="text/javascript"></script>
+<script src="rsa.js" type="text/javascript"></script>
+<script src="rsa2.js" type="text/javascript"></script>
+<script src="mns-pp.js" type="text/javascript"></script>
+<link rel="stylesheet" type="text/css" href="mns.css" />
+</head>
+<body>
+<form>
+Passphrase
+<input type="text" name="passphrase" id="passphrase" /><br />
+Public Key (n)
+<input type="text" name="publickey" id="publickey" 
+value="8c4bd287f81cf29b6e115256d7cd44de71baeb87db50a5b668346849ab03626c60115676dbc39045f69d870a518cd0f5738b5e7195e48e206ff4bdb9e283eb262ca68f25ff8a696e1b6205767ed3feae093a371e5e483e23f551b12e9d7970620efad8d4b472ad93d1daf6a73a520db144dd45f682fe63d0379768b2545afcc3" /><br />
+Encrypted d
+<input type="text" name="ed" id="ed"
+/><br />
+Encrypted Random AES
+<input type="text" name="erk" id="erk"
+/><br />
+Encrypted Full Key
+<input type="text" name="efk" id="efk"
+/><br />
+d
+<input type="text" name="privatekey" id="privatekey" 
+/><br />
+p
+<input type="text" name="p" id="p" 
+value="e740b238bd5a8ee6fa8cf5d2b5eef8686b59a9b757b99eb9ffde369f7e56a9a8c196a24ea28c11f732ab304f05f324f167e5e9363e109a7394d5eda25ce4ddf7"/><br />
+q
+<input type="text" name="q" id="q" 
+value="9b4f518a8a089dccb5f199fb0a8d14336db45e7952d193178ef7f6c97353db848e1bae9af0ff27e305c116f555a8e4732cd74262a44d9249dae8e7640b059495"/><br />
+D mod (P-1)
+<input type="text" name="dmp" id="dmp" 
+value="a4ab19fd734067dfabebf223dfef51adb13b80b1906319d6a28f4e60162b89d6243baa49ca4f697f97f1f48d60d439ab38ebab3c37c7c4e3a6c90ad501c6eb13"/><br />
+D mod (Q-1)
+<input type="text" name="dmq" id="dmq" 
+value="7dcf7e2d6cedd7ee79c0d24c835a8f6fadc1bbfa29f5ad631b24915cd538ac0db0148a97e6fbbaf2f3b95c00b7384e7f6266a9d74063ba4a6bb3d9a5b82bf815"/><br />
+1/Q mod P
+<input type="text" name="qinv" id="qinv" 
+value="a2f12f4dafd8bf284b310b42ccffaeefa11031a59805f00eadb4d5fe62cd76d3f78725526e93bcc3dc125e57049f5dc50298ff29e2ca412568e9e5ba9fa63787"/><br />
+Cipher text
+<input type="text" name="ciphertext" id="ciphertext" /><br />
+Plain text
+<input type="text" name="plaintext" id="plaintext" /><br />
+<input type="submit" value="Prepare" id="prepare" /><br />
+<input type="submit" value="Encrypt" id="encrypt" /><br />
+<input type="submit" value="Decrypt" id="decrypt" /><br />
+</form>
+</body>
+</html>
+
