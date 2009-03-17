@@ -1,1 +1,1 @@
-../bin-debug/AC_OETags.js
+../bin-release/AC_OETags.js

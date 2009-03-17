@@ -1,1 +1,1 @@
-../bin-debug/mns-kg.js
+../bin-release/mns-kg.js
