@@ -10,8 +10,8 @@ $(function(){
 		function(){
 			$('#path, #ppf, #ppf2').attr('readonly', "true");
 			ifCheckAllParameters(function(){
-				$('#waitmessage').dialog({modal: true});
-				setTimeout("getFlashMovie('mynumberstation').generateKeys($('#ppf').val())", 100);
+				$('#waitmessage').dialog({modal: true, buttons: {'Generating...' : function(){}}});
+				setTimeout("getFlashMovie('mynumberstation').generateKeys($('#ppf').val())", 500);
 				$('#path, #ppf, #ppf2').removeAttr('readonly');
 			},function(){
 				$('#path, #ppf, #ppf2').removeAttr('readonly');
@@ -117,19 +117,18 @@ function pagecreationdone(data){
 	results = data.split("\n");
 	switch(results.shift()){
 	case "success":
-		$('#waitmessage').append('<p id="donemessage">Oh look, your page is ready.</p>');
-		setTimeout("showWelcome(results[0])", 1500);
+		setTimeout("showWelcome(results[0])", 100);
 		break;
 	case "fail":
 		$('#waitmessage').dialog("close");
 		attentionWithButton("Shoot, there was a strange error.  " +
 		"Would you mind emailing it to me at help@dropsecret.com.  " +
-		"If you submit again it may work the second time.  Sorry about this. \n" + 
+		"If you submit again it may work the second time.  Sorry about this. \n Error: " + 
 		results.join("\n"));
 		break;
-	case "default":
+	default:
 		$('#waitmessage').dialog("close");
-		attentionWithButton("the server responded surprisingly");
+		attentionWithButton("The server responded surprisingly\n Please try to submit again");
 		break;
 	}
 }
