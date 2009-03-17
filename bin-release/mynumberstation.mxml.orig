@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mx:Application xmlns:mx="http://www.adobe.com/2006/mxml" layout="absolute" height="600" width="600" xmlns:ns1="bridge.*">
+	<mx:Label text="My Number Station" left="10" top="10"/>
+	<mx:TextInput left="10" top="50" width="200" id="passphrase"/>
+	<mx:Button left="10" top="150" label="Generate" click="generateKeys(passphrase.text)"/>
+	<mx:Text id="privatersakey" left="10" top="200"/>
+	<mx:Text id="encryptedrsakey" left="10" top="250"/>
+	<mx:Text id="iv" left="10" top="300"/>
+	<mx:Text id="decryptedrsakey" left="10" top="350"/>
+	<mx:Text id="debugtxt" left="10" top="400"/>
+	
+	<mx:Script>
+		<![CDATA[
+			import com.hurlant.crypto.symmetric.PKCS5;
+			import com.hurlant.crypto.symmetric.IPad;
+			import com.hurlant.crypto.symmetric.AESKey;
+			import com.hurlant.crypto.rsa.RSAKey;
+			import com.hurlant.crypto.Crypto;
+			import com.hurlant.util.Hex;
+			import com.hurlant.crypto.symmetric.ICipher;
+			import com.hurlant.crypto.symmetric.IVMode;
+			import flash.external.ExternalInterface;
+			import flash.events.Event;
+
+			private function generateKeys(passphrase:String):void{
+				var exp:String = "10001";
+				var rsa:RSAKey = RSAKey.generate(512, exp);
+				privatersakey.text = rsa.d.toString();
+				debugtxt.text = "1";
+				var data:ByteArray = rsa.d.toByteArray(); 
+				var kdata:ByteArray = Hex.toArray(Hex.fromString(passphrase));
+				var name:String = "simple-aes-cbc";
+				debugtxt.text = "2";
+				var pad:IPad = new PKCS5;
+				var sym:ICipher = Crypto.getCipher(name, kdata, pad);
+				
+				debugtxt.text = sym.toString();
+				pad.setBlockSize(sym.getBlockSize());
+				debugtxt.text = "3";
+				sym.encrypt(data);
+				encryptedrsakey.text = Hex.fromArray(data);
+				
+				pad = new PKCS5;
+				kdata = Hex.toArray(Hex.fromString(passphrase));
+				name = "simple-aes-cbc";
+				sym = Crypto.getCipher(name, kdata, pad);
+				pad.setBlockSize(sym.getBlockSize());
+				debugtxt.text = sym.toString();
+				data = Hex.toArray(encryptedrsakey.text);
+				if(sym is IVMode){
+					debugtxt.text = "AHA";
+				}
+				sym.decrypt(data);
+				debugtxt.text = "5";
+				debugtxt.text = Hex.fromArray(data);
+			}
+
+		]]>
+	</mx:Script>
+	<ns1:FABridge/>
+</mx:Application>
