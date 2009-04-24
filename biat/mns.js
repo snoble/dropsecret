@@ -87,7 +87,7 @@ function ifValidateDestPath(path, trueResponder, falseResponder){
 }
 
 function ifValidatePathNameAvailable(path, trueResponder, falseResponder){
-	$.post('./validpath.php', 
+	$.post('/validpath.php', 
 		{"path": path}, 
 		function(data){
 			data = data.split("\n");
