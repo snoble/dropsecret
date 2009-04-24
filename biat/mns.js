@@ -68,13 +68,13 @@ function checkDestPath(){
 	$('#dest-path').unbind("keypress");
 	ifValidateDestPath(path, function(){
 		if(path != $('#dest-path').val()) {return}
-		$('#goto').css("text-decoration", "none").removeAttr("disabled").click(function(){gotoPath(path)});
+		$('#goto').removeAttr("disabled").click(function(){gotoPath(path)});
 		$('#dest-path').keypress(function(e){
 			if(e.which == 13){gotoPath(path);}
 		});
 	},function(){
 		if(path != $('#dest-path').val()) {return}
-		$('#goto').css("text-decoration", "line-through").attr("disabled", "disabled");
+		$('#goto').attr("disabled", "disabled");
 	});
 }
 
