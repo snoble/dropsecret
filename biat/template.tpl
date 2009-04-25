@@ -24,7 +24,7 @@
 <p>Unfortunately we really do require <a href="https://www.google.com/adsense/support/bin/answer.py?hl=en&answer=12654">javascript</a> in order to get anything done.</p>
 </noscript>
 <div id="content" class="ui-corner-top">
-<h1><a href="/">DropSecret<sub>&#946;</sub></a></h1>
+<h1><a href="/"><img src="/logo.png" alt="Drop Secret"></img></a></h1>
 <div id="toolbar"><input type="text" id="dest-path"/><button id="goto">Go</button></div>
 
 <div id="documentation" class="ui-tabs ui-widget ui-widget-content ui-corner-all">
