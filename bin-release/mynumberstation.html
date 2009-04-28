@@ -1,162 +1,31 @@
-<!-- saved from url=(0014)about:internet -->
-<html lang="en">
-
-<!-- 
-Smart developers always View Source. 
-
-This application was built using Adobe Flex, an open source framework
-for building rich Internet applications that get delivered via the
-Flash Player or to desktops via Adobe AIR. 
-
-Learn more about Flex at http://flex.org 
-// -->
-
+<html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-
-<title>Create your DropSecret page</title>
-<script src="AC_OETags.js" language="javascript"></script>
-
-<script src="jquery-1.3.1.min.js" language="javascript"></script>
-<script src="jquery-ui-personalized-1.6rc6.min.js" type="text/javascript"></script>
-<script src="sha256.js" type="text/javascript"></script>
-<script src="aes.js" type="text/javascript"></script>
-<script src="jsbn.js" type="text/javascript"></script>
-<script src="prng4.js" type="text/javascript"></script>
-<script src="rng.js" type="text/javascript"></script>
-<script src="jsbn2.js" type="text/javascript"></script>
-<script src="rsa.js" type="text/javascript"></script>
-<script src="rsa2.js" type="text/javascript"></script>
-<script src="dse.js" type="text/javascript"></script>
-<script src="mns.js" language="javascript"></script>
-<script src="mns-kg.js" language="javascript"></script>
-<link rel="stylesheet" type="text/css" href="mns.css" />
-<link type="text/css" href="theme/ui.all.css" rel="Stylesheet" />
-
-<script language="JavaScript" type="text/javascript">
-<!--
-// -----------------------------------------------------------------------------
-// Globals
-// Major version of Flash required
-var requiredMajorVersion = 9;
-// Minor version of Flash required
-var requiredMinorVersion = 0;
-// Minor version of Flash required
-var requiredRevision = 28;
-// -----------------------------------------------------------------------------
-// -->
-</script>
+<title>DropSecret</title>
+<script src="../jquery-1.3.1.min.js" type="text/javascript"></script>
+<script src="../jquery-ui-personalized-1.6rc6.min.js" type="text/javascript"></script>
+<script src="../mns.js" type="text/javascript"></script>
+<link rel="stylesheet" type="text/css" href="../mns.css" />
+<link type="text/css" href="../theme/ui.all.css" rel="Stylesheet" />
 </head>
-
 <body>
-<script language="JavaScript" type="text/javascript">
-<!--
-// Version check for the Flash Player that has the ability to start Player Product Install (6.0r65)
-var hasProductInstall = DetectFlashVer(6, 0, 65);
-
-// Version check based upon the values defined in globals
-var hasRequestedVersion = DetectFlashVer(requiredMajorVersion, requiredMinorVersion, requiredRevision);
-
-if ( hasProductInstall && !hasRequestedVersion ) {
-	// DO NOT MODIFY THE FOLLOWING FOUR LINES
-	// Location visited after installation is complete if installation is required
-	var MMPlayerType = (isIE == true) ? "ActiveX" : "PlugIn";
-	var MMredirectURL = window.location;
-    document.title = document.title.slice(0, 47) + " - Flash Player Installation";
-    var MMdoctitle = document.title;
-
-	AC_FL_RunContent(
-		"src", "playerProductInstall",
-		"FlashVars", "MMredirectURL="+MMredirectURL+'&MMplayerType='+MMPlayerType+'&MMdoctitle='+MMdoctitle+"",
-		"width", "1",
-		"height", "1",
-		"align", "middle",
-		"id", "mynumberstation",
-		"quality", "high",
-		"bgcolor", "#869ca7",
-		"name", "mynumberstation",
-		"allowScriptAccess","sameDomain",
-		"type", "application/x-shockwave-flash",
-		"pluginspage", "http://www.adobe.com/go/getflashplayer"
-	);
-} else if (hasRequestedVersion) {
-	// if we've detected an acceptable version
-	// embed the Flash Content SWF when all tests are passed
-	AC_FL_RunContent(
-			"src", "mynumberstation",
-			"width", "1",
-			"height", "1",
-			"align", "middle",
-			"id", "mynumberstation",
-			"quality", "high",
-			"bgcolor", "#869ca7",
-			"name", "mynumberstation",
-			"allowScriptAccess","sameDomain",
-			"type", "application/x-shockwave-flash",
-			"pluginspage", "http://www.adobe.com/go/getflashplayer"
-	);
-  } else {  // flash is too old or we can't detect the plugin
-    var alternateContent = 'If you want to create a page you are going to have to get '
-   	+ '<a href=http://www.adobe.com/go/getflash/>Flash</a> to get that done.'
-   	+ '  Otherwise you\'ll be fine without it.';
-    document.write(alternateContent);  // insert non-flash content
-  }
-// -->
-</script>
-<noscript>
-<p>We are extremely pleased that you wish to use our service.</p>  
-<p>Unfortunately we really do require <a href="https://www.google.com/adsense/support/bin/answer.py?hl=en&answer=12654">javascript</a> in order to get anything done.</p>
-</noscript>
-<div id="content" class="ui-corner-all">
+<div id="content" class="ui-corner-top nojs">
 <h1><a href="/"><img src="/logo.png" alt="Drop Secret"></img></a></h1>
-<div id="toolbar"><input type="text" id="dest-path"/><button id="goto">Go</button></div>
-<div id="documentation" class="ui-tabs ui-widget ui-widget-content ui-corner-all">
-<ul class="ui-tabs-nav ui-helper-reset ui-helper-clearfix ui-widget-header ui-corner-all">
-<li class="ui-state-default ui-corner-all"><a href="#welcomedoc">w</a></li>
-<li class="ui-state-default ui-corner-all"><a href="#passworddoc">p</a></li>
-<li class="ui-state-default ui-corner-all"><a href="#pagenamedoc">n</a></li>
-<li class="ui-state-default ui-corner-all"><a href="#disclaimerdoc">d</a></li>
-</ul>
-<div id="welcomedoc" class="ui-tabs-panel ui-widget-content ui-corner-bottom">
-<h3>Welcome</h3>
-<p>DropSecret is the web service to safely send and receive short messages with another user without the web service (me) knowing what you sent.</p>
-<p>You are moments away from being able to start receiving secrets from your co-conspirators.  All you need to do is create a page by filling 
-in a <a href="#pagenamedoc">page name</a> and a <a href="#passworddoc">secure password</a>.  Mind that you cannot change your password later so
-make it secure early on.</p>
-<p>If you are here to drop a secret to an ally just fill in their page name in the <a href="#goto" class="gflink">goto field</a>.</p> 
-</div>
-<div id="passworddoc" class="ui-tabs-panel ui-widget-content ui-corner-bottom ui-tabs-hide"><h3>Pass Phrase Warning</h3><p>Mind to have a good pass phrase right away.</p><p>Really good!</p>
-<p>Your pass phrase is used directly to decrypt the key giving you access to your secrets; we don't validate your pass phrase.</p>
-<p>Changing to a better pass phrase later does not let you get back the security you've lost by starting with a weak pass phrase.
-So it does not make sense for us to let you change your pass phrase later.</p>
-<p>I suggest using a multi-word pass phrase that only has meaning to you and includes non-alphanumeric characters.  If you use a well known 
-expression you are most likely vulnerable.  If you use a dictionary word or trademark you are definitely vulnerable.</p></div>
-<div id="pagenamedoc" class="ui-tabs-panel ui-widget-content ui-corner-bottom ui-tabs-hide"><h3>Page names</h3>
-<p>
-Your page name can be any combination of lowercase letters and numbers that have not been used before.
+<div id="toolbar"><div id="gotodiv">
+<label for="dest-path">Go to drop page:</label>
+<input type="text" id="dest-path"/><button id="goto">Go</button>
+</div></div>
+<div id="static-content">
+<p>DropSecret is the easy and secure way to send passwords, credit card numbers, or any other sensitive information to those whom you trust.</p>
+<p><strong>How easy?</strong>  To send a message you don't need to know any crypto information, have a password, or even have an account.  To receive your messages all you need to keep track of is your pass phrase.</p>  
+<p><strong>How secure?</strong>  So secure that even with complete control of the server we don't know what your messages are.  A drop secret page has a 1024 bit public key that the web browser will use to encrypt your messages.  Then the only way to decrypt the message is to use your with your pass phrase.</p>
+<p>If you are here to drop a secret to an ally just fill in their drop page name in the <a href="#goto" class="gflink">goto field</a> and click <em>go</em>.  <strong>Remember your message subject won't be encrypted and will be visible to anyone.</strong></p>
+<p>If you are here to retrieve your secrets just enter you drop page name in the <a href="#goto" class="gflink">goto field</a> and click <em>go</em>.  Then select the <em>Secrets</em> link and follow the instructions.</p>
+<p>Your drop page is a place where anyone can drop you a secret; only you have the key to read it.</p>
+<p>To create a page all you need to do is come up with a secure pass phrase.  Your browser, with the help of flash and javascript, will use your pass phrase to create a set of cryptographically secure keys.  Your pass phrase is never sent to us so it is safe.  <strong>It also means we can't retrieve it or change it for you later.</strong>
 </p>
-</div>
-<div id="disclaimerdoc" class="ui-tabs-panel ui-widget-content ui-corner-bottom ui-tabs-hide">
-<h3>Disclaimer</h3>
-<p>We promise nothing.</p>
-</div>
-<div clas="clear"></div>
-</div>
-<div id="createform" class="ui-tabs ui-widget ui-widget-content ui-corner-all">
-	<label>Page name:</label>
-	<input type="text" id="path"/>
-	<span id="path-alert" class="form-alert"></span>
-	<label>Permanent pass phrase:</label>
-	<input type="password" id="ppf"/>
-	<span id="ppf-alert" class="form-alert"></span>
-	<label>Retype pass phrase:</label>
-	<input type="password" id="ppf2"/>
-	<span id="ppf2-alert" class="form-alert"></span>
-	<button id="mpb">Generate</button>
-<div class="clear"></div>
-</div>
-<div class="clear"></div>
-</div>
+<p>If you are ready to create a drop page just click our <a href="/create">create link</a>.</p>
+</div></div>
 <div id="footer-links">
 <ul>
 <li><a href="/about">about us</a></li>
@@ -164,10 +33,6 @@ Your page name can be any combination of lowercase letters and numbers that have
 <li><a href="/contactus">contact us</a></li>
 </ul>
 </div>
-<div id="waitmessage" class="dialog">
-<p>Page generation takes a while.  Right now your browser is working hard to generate a set of secure encryption keys.</p>
-<p>You may want to take this time to jot down your pass phrase somewhere.  If you forget it then it is gone.  We don't
-know your pass phrase so no matter how much we want to help we won't be able to tell you what it is.  </p>
-</div>
 </body>
 </html>
+

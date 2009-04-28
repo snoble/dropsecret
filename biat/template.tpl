@@ -25,8 +25,10 @@
 </noscript>
 <div id="content" class="ui-corner-top">
 <h1><a href="/"><img src="/logo.png" alt="Drop Secret"></img></a></h1>
-<div id="toolbar"><input type="text" id="dest-path"/><button id="goto">Go</button></div>
-
+<div id="toolbar">
+<label for="dest-path">Go to drop page:</label>
+<input type="text" id="dest-path"/><button id="goto">Go</button>
+</div>
 <div id="documentation" class="ui-tabs ui-widget ui-widget-content ui-corner-all">
 <ul class="ui-tabs-nav ui-helper-reset ui-helper-clearfix ui-widget-header ui-corner-all">
 <li class="ui-state-default ui-corner-all"><a href="#welcomedoc">w</a></li>
@@ -34,16 +36,16 @@
 <li class="ui-state-default ui-corner-all"><a href="#messagedoc">m</a></li>
 <li class="ui-state-default ui-corner-all"><a href="#decryptdoc">d</a></li>
 </ul>
-<div id="welcomedoc" class="ui-tabs-panel ui-widget-content ui-corner-bottom"><h3>Welcome</h3><p>You probably have come to this page to leave secret messages for the page owner.  All you need to do is fill out the subject and messgage field and your browser will take care of the rest.</p><p>If you are the page owner (ie you know the pass phrase) just click on Decrypt to begin receiving your secrets.</p></div>
+<div id="welcomedoc" class="ui-tabs-panel ui-widget-content ui-corner-bottom"><h3>Welcome</h3><p>You probably have come to this page to leave secret messages for the page owner.  All you need to do is fill out the subject and messgage field and your browser will take care of the rest.</p><p>If you are the page owner (ie you know the pass phrase) just click on <em>Secrets</em> to begin receiving your messages.</p></div>
 <div id="subjectdoc" class="ui-tabs-panel ui-widget-content ui-corner-bottom ui-tabs-hide"><h3>Subject Warning</h3><p>Be careful not to put anything sensitive in the subject line.  The subject line is <strong>not encrypted</strong> so anyone who comes to this page will be able to see what was written.</p></div>
 <div id="messagedoc" class="ui-tabs-panel ui-widget-content ui-corner-bottom ui-tabs-hide"><h3>Message</h3><p>This is where you can put sensitive information to pass on to the page owner.  Your message will be encrypted with a public key by your own browser.
 We will only ever see the encrypted version of your message.</p></div>
-<div id="decryptdoc" class="ui-tabs-panel ui-widget-content ui-corner-bottom ui-tabs-hide"><h3>Decrypting</h3><p>If you enter the correct pass phrase you will be able to decrypt the messages posted on this page.</p></div>
+<div id="decryptdoc" class="ui-tabs-panel ui-widget-content ui-corner-bottom ui-tabs-hide"><h3>Decrypting</h3><p>If you enter the correct pass phrase you will be able to decrypt the messages posted on this page by clicking on the <em>Decrypt</em> link under the subject.</p></div>
 </div>
 <div id="ppcontent" class="ui-tabs ui-widget ui-widget-content ui-corner-all">
 	<ul class="ui-tabs-nav ui-helper-reset ui-helper-clearfix ui-widget-header ui-corner-all">
 		<li class="ui-state-default ui-corner-all"><a href="#postpage">Post</a></li>
-		<li id="decrypt"  class="ui-state-default ui-corner-all"><a href="#decryptpage">Decrypt</a></li>
+		<li id="decrypt"  class="ui-state-default ui-corner-all"><a href="#decryptpage">Secrets</a></li>
 	</ul>
 	<div id="postpage" class="ui-tabs-panel ui-widget-content ui-corner-bottom">
 		<div id="subjectbox">

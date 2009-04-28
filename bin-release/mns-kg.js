@@ -105,7 +105,7 @@ function setvalue(key, value){
 	if(isSet(keys)){
 		var postkeys = dsekey.setKeys(keys).encryptKeys().getSafeKeys();
 		postkeys.name = $('#path').val();
-		$.post("createpage.php", postkeys, pagecreationdone);  
+		$.post("/createpage.php", postkeys, pagecreationdone);  
 		for(var j in keys){
 			keys[j] = 0;
 			dsekey = new DSEKey();

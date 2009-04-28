@@ -82,9 +82,13 @@ h1, h2{
 #toolbar{
 	text-align: right;
 	margin-bottom: 20px;
-	margin-top: -50px;
+	margin-top: -70px;
 	position: relative;
-	right: 10px;
+	height: 44px;
+}
+
+#static-content{
+	margin: 10px;
 }
 
 #subject, #postpage textarea, .post textarea, .post{
@@ -183,6 +187,17 @@ a.decrypt{
 	width: 100%;
 	top: 30px;
 	left: 0;
+}
+
+#gotodiv{
+	text-align: left;
+	position: absolute;
+	right: 10px;
+}
+
+#gotodiv label{
+	display: block;
+	font-size: 1.1em;
 }
 
 #goto{
