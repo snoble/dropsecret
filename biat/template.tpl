@@ -25,10 +25,10 @@
 </noscript>
 <div id="content" class="ui-corner-top">
 <h1><a href="/"><img src="/logo.png" alt="Drop Secret"></img></a></h1>
-<div id="toolbar">
+<div id="toolbar"><div id="gotodiv">
 <label for="dest-path">Go to drop page:</label>
 <input type="text" id="dest-path"/><button id="goto">Go</button>
-</div>
+</div></div>
 <div id="documentation" class="ui-tabs ui-widget ui-widget-content ui-corner-all">
 <ul class="ui-tabs-nav ui-helper-reset ui-helper-clearfix ui-widget-header ui-corner-all">
 <li class="ui-state-default ui-corner-all"><a href="#welcomedoc">w</a></li>
