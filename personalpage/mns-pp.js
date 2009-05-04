@@ -1,4 +1,10 @@
+var benchmark = false;
 $(function(){
+	if(window.location.hash == '#benchmark'){
+		benchmark = true;
+		$('#content').before('<div id="benchmark"></div>');
+		$('#benchmark').css('position', 'fixed').css('left', 0).css('top', 0);
+	}
 	$('#subject').val("Subject won't be encrypted").css({color: "d3d1d0", size: "small"})
 		.focus(selectSubject).click(selectSubject).keyup(selectSubject).keydown(selectSubject);
 	$('#ppcontent').tabs().find("ul.ui-tabs-nav li").removeClass("ui-corner-top").addClass("ui-corner-all");
@@ -64,8 +70,15 @@ function postreceived(dialog){
 function decryptmessage(){
 	var post = $(this).parent();
 	var decrdialog = attention("decrypting...");
+	if (benchmark){
+		var start = new Date();
+	}
 	setTimeout(function(){
 		var plaintext = dsekey.decryptCipherText(post.find("p.ciphertext").text());
+		if(benchmark){
+			var end = new Date();		
+			$('#benchmark').text((end.getTime() - start.getTime())/1000 + " seconds");
+		}
 		if(plaintext != null){
 			post.find(".plaintext").text(plaintext);
 			post.find("a.decrypt").remove();
