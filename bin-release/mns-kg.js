@@ -136,7 +136,7 @@ function pagecreationdone(data){
 function showWelcome(path){
 	$('#waitmessage').dialog("close");
 	var welcome = attentionWithButton(
-		'<p>Your page has been created for you.  If you want people to give you a message just give them the url <a href="'+path+'">http://www.dropsecret.com/'+path+'</a></p><p>That is also where you will go to receive and decrypt the messages they have sent you.</p><p><strong>Don\'t give out your pass phrase!</strong> Others do not need your pass phrase to leave you a message; they only need your page name.',
+		'<p>Your page has been created for you.  If you want people to give you a message just give them the url <a href="/'+path+'">http://www.dropsecret.com/'+path+'</a></p><p>That is also where you will go to receive and decrypt the messages they have sent you.</p><p><strong>Don\'t give out your pass phrase!</strong> Others do not need your pass phrase to leave you a message; they only need your page name.',
 		true);
 	var buttons = welcome.dialog("option", "buttons");
 	buttons["Take me there"] = function(){
